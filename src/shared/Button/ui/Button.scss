@@ -1,0 +1,11 @@
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        fill: rgba(251, 247, 247, 0.418);
+    }
+}

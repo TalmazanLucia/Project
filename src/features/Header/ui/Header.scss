@@ -1,0 +1,19 @@
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+
+    .title {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    .style {
+        display: flex;
+        flex-direction: row;
+
+    }
+}

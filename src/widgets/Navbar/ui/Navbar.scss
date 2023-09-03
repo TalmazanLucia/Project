@@ -1,0 +1,14 @@
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: rgba(4, 162, 9, 0.625);
+    color: white;
+
+    .links {
+        display: flex;
+        gap: 17px;
+        font-size:110%
+    }
+}

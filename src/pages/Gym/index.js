@@ -1,0 +1,1 @@
+export { default as Gym } from './ui/Gym';

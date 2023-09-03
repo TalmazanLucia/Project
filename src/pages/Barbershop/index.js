@@ -1,0 +1,1 @@
+export { default as Barbershop } from './ui/Barbershop';
