@@ -1,3 +1,43 @@
 .services-overview-wrapper {
+    height: calc(100% - 55vh - 53px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
+    .nav-arrow {
+        background-color: rgba(4, 162, 9, 0.625);
+        padding: 4px;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 12vh;
+        cursor: pointer;
+    }
+
+    .service-item {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-color: #000;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+
+        &:nth-child(2),
+        &:nth-child(5) {
+            position: relative;
+            bottom: 4vh
+        }
+        
+        &:nth-child(3),
+        &:nth-child(4) {
+            position: relative;
+            bottom: 10vh
+        }
+    }
 }

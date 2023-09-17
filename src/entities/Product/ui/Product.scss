@@ -1,0 +1,30 @@
+.product-wrapper{
+
+  .image {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .title {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    font-style: oblique;
+    max-width: 250px;
+    }
+
+   .description{
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    text-align: left;
+    max-width: 250px;
+   }
+
+   .button-wrapper {
+    margin: 0 auto;
+   }
+}

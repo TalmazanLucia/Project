@@ -1,3 +1,27 @@
 .spa-wrapper{
-    
+    background-image: url("./../../../shared/assets/images/spa.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative; 
+
+    .scolumn-wrapper {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 40px 160px;
+        justify-content: center;
+        
+        img {
+            width: 250px;
+            height: 180px;
+            
+            &:hover {
+                animation: zoom_in_out 300ms ease-in-out alternate;
+                transform: scale(1.3);
+            }
+        }
+    }
 }

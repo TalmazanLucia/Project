@@ -1,3 +1,16 @@
 .signup-wrapper{
-
+    background-image: url("./../../../shared/assets/images/bg.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    
+    .contentup-wrapper {
+        width: 100%;
+        height: calc(100% - 53px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

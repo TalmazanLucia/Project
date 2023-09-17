@@ -9,6 +9,26 @@
     .links {
         display: flex;
         gap: 17px;
-        font-size:110%
+        font-size:110%;
+
+        .link-item {
+            text-decoration: none;
+            color: #FFF;
+            cursor: pointer;
+        }
+    }
+
+    .multi-links-wrapper {
+        position: relative;
+
+        .multi-links-submenu {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: rgba(4, 162, 9, 0.625);
+            display: flex;
+            flex-direction: column;
+            z-index: 99;
+        }
     }
 }

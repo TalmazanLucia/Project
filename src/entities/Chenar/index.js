@@ -1,0 +1,1 @@
+export {default as Chenar } from './ui/Chenar';
