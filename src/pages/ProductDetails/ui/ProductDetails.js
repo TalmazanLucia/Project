@@ -67,7 +67,7 @@ const ProductDetails = () => {
               <input placeholder="Selected Hour" value={selectedHour} onChange={(e) => setSelectedHour(e.target.value)} />
               <input placeholder="Number of people" value={selectedPeople} onChange={(e) => setSelectedPeople(e.target.value)} />
             </div>
-            <Button text={"Book"} onClick={submitData}/>
+            <Button text={"Booking"} onClick={submitData}/>
           </div>
         </div>
       </div>
