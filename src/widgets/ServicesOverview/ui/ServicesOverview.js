@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './ServicesOverview.scss';
 import { ArrowLeftBottom, ArrowRightBottom } from '../../../shared/assets';
 import barberImage from '../../../shared/assets/images/b2.jpg';
@@ -10,46 +10,63 @@ import { useNavigate } from 'react-router-dom';
 
 const ServicesOverview = () => {
     const navigate = useNavigate();
-    const [imagesSources, setImagesSources] = useState([
-        {image: barberImage, path: "/barbershop"},
-        {image: gymImage, path: "/gym"},
-        {image: medicineImage, path: "/medicine"},
-        {image: restaurantsImage, path: "/restaurants"},
-        {image: spaImage, path: "/spa"}
-      ]);
+
+    const imagesSources = [
+        { image: barberImage, path: "/barbershop" },
+        { image: gymImage, path: "/gym" },
+        { image: medicineImage, path: "/medicine" },
+        { image: restaurantsImage, path: "/restaurants" },
+        { image: spaImage, path: "/spa" },
+        { image: barberImage, path: "/barbershop" },
+        { image: gymImage, path: "/gym" },
+        { image: medicineImage, path: "/medicine" },
+        { image: restaurantsImage, path: "/restaurants" },
+        { image: spaImage, path: "/spa" },
+    ];
+
+    const [numImagesToDisplay, setNumImagesToDisplay] = useState(4);
     const [activeImage, setActiveImage] = useState(0);
 
+    const handleResize = useCallback(() => {
+        const newNumImagesToDisplay = window.innerWidth <= 768 ? 1 : 4;
+        setNumImagesToDisplay(newNumImagesToDisplay);
+    }, []);
+
+    useEffect(() => {
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
+
     const handlePrevious = () => {
-        if (activeImage === 0) {
-            setImagesSources(prev => [...imagesSources, ...prev])
-        }
-        setActiveImage(activeImage  + 4 - 1);
-    }
+        setActiveImage((prevActiveImage) => (prevActiveImage - 1 + (window.innerWidth <= 768 ? imagesSources.length : 4)) % (window.innerWidth <= 768 ? imagesSources.length : 4));
+    };
 
     const handleNext = () => {
-        if (activeImage + 4 === imagesSources.length) {
-            setImagesSources(prev => [...prev, ...imagesSources])
-        }
-        setActiveImage(activeImage + 1);
-    }
+        setActiveImage((prevActiveImage) => (prevActiveImage + 1) % (window.innerWidth <= 768 ? imagesSources.length : 4));
+    };
 
     return (
         <div className="services-overview-wrapper">
             <div onClick={handlePrevious} className="nav-arrow">
-                <ArrowLeftBottom style={{width: 24, height:24}}/>
+                <ArrowLeftBottom style={{ width: 24, height: 24 }} />
             </div>
             {
-                imagesSources.slice(activeImage, activeImage + 4).map(({image, path}) => (
-                    <div className="service-item" onClick={() => navigate(path)}>
+                imagesSources.slice(activeImage, activeImage + numImagesToDisplay).map(({ image, path }, index) => (
+                    <div key={index} className="service-item" onClick={() => navigate(path)}>
                         <img src={image} alt="" />
                     </div>
                 ))
             }
             <div onClick={handleNext} className="nav-arrow">
-                <ArrowRightBottom style={{width: 24, height:24}}/>
+                <ArrowRightBottom style={{ width: 24, height: 24 }} />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ServicesOverview;

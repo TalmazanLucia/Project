@@ -1,6 +1,6 @@
 .blog-wrapper{
     background-image: url("./../../../shared/assets/images/bg.jpg");
-        height: 100vh;
+        min-height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size:cover;
@@ -22,6 +22,11 @@
         gap: 100px;
         width: calc(100% - 40px);
         margin-top: 40px;
+
+        @media screen and (max-width: 678px) {
+            flex-direction: column;
+            padding: 0 20px;
+        }
     }
 
     .column-wrapper {
@@ -40,6 +45,10 @@
         justify-content:end;
         gap:160px;
         
+        @media screen and (max-width: 678px) {
+            flex-direction: column;
+            gap: 60px;
+        }
     }
 
     .big-chenar {

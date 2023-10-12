@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../../../shared/Button';
+import { Button } from '../../../shared/ui/Button';
 import './Product.scss';
 
 const Product = ({className, title, description, image, phone, gmail, id}) => {

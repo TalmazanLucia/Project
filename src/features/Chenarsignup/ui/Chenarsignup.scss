@@ -8,6 +8,10 @@
     justify-content: center;
     position: relative;
 
+    @media screen and (max-width: 678px) {
+        width: 90%;
+    }
+
     .chenarsignupcontent-wrapper{
         display: flex;
         flex-direction: column;

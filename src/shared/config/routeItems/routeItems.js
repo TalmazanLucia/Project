@@ -13,7 +13,7 @@ import { SignUp } from '../../../pages/SignUp';
 import Contact from "../../../pages/Contact/ui/Contact";
 import Gallery from "../../../pages/Gallery/ui/Gallery";
 import { Blog } from "../../../pages/Blog";
-import { ProductDetails } from "../../../pages/ProductDetails/imdex";
+import { ProductDetails } from "../../../pages/ProductDetails";
 
 
 export const routeItems = createBrowserRouter([

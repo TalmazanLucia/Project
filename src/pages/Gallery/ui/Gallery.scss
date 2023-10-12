@@ -1,6 +1,6 @@
 .gallery-wrapper{
     background-image: url("./../../../shared/assets/images/bg.jpg");
-    height: 100vh;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -20,6 +20,12 @@
         display: flex;
         justify-content:center;
         gap:160px;
+
+        @media screen and (max-width: 678px) {
+            flex-direction: column;
+            gap: 85px;
+            align-items: center;
+        }
         
 
         img {

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Chenarsignup.scss";
 import { AvatarIcon } from "../../../shared/assets";
-import SearchInput from "../../../shared/SearchInput/ui/SearchInput";
-import { Button } from "../../../shared/Button";
+import SearchInput from "../../../shared/ui/SearchInput/ui/SearchInput";
+import { Button } from "../../../shared/ui/Button";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../../shared/providers/firebase";
 import { useNavigate } from "react-router-dom";
@@ -30,9 +31,9 @@ const Chenarsignup = () => {
     createUserWithEmailAndPassword(auth, gmail, password)
       .then((res) => {
         updateProfile(res.user.auth.currentUser, {
-            displayName: name,
-          })
-          navigate('/login')
+          displayName: name,
+        })
+        navigate('/login')
       })
       .catch((error) => console.log(error));
   };
@@ -61,6 +62,7 @@ const Chenarsignup = () => {
           onChange={handlePassword}
           type={"password"}
         />
+        <Link to="/login" style={{ color: "black", textDecoration: "none", cursor: "pointer" }}>Login</Link>
 
         <Button text={"Create account"} onClick={createUser} />
       </div>

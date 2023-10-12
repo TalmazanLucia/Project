@@ -16,40 +16,55 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
+
+        @media screen and (max-width: 678px) {
+            flex-direction: column;
+        }
     }
 
     .popup-wrapper {
         position: absolute;
-        top: 65%;
+        top: 61%;
         width: 200px;
-        background-color: rgba(251, 250, 250, 0.519);
+        background-color: #fff;
         border-radius: 15px;
         z-index: 10;
         padding: 10px;
         left: 55%;
-        transform: translateX(-50%);
+        transform: translateX(-40%);
+        box-shadow: 5px 5px 20px 4px rgb(156, 156, 156);
+
+        @media screen and (max-width: 678px) {
+            left: 47%
+        }
     }
 
     .select {
         position: relative;
         border-radius: 15px;
-        background-color: rgba(251, 250, 250, 0.519);
+        background-color: #fff;
         padding: 8px 25px;
         border: 0;
         outline: none;
         width: 212px;
         font-size: 13.3333px;
 
+        @media screen and (max-width: 678px) {
+            width: 100%;
+        }
+
         .typePopup {
             position: absolute;
-            top: 60px;
+            top: 40px;
             left: 0;
             width: 200px;
-            background-color: rgba(251, 250, 250, 0.519);
+            background-color: #fff;
+            color: #000;
             border-radius: 15px;
             z-index: 10;
             padding: 10px;
-            
+            box-shadow: 5px 5px 20px 4px rgb(156, 156, 156);
+
             p {
                 cursor: pointer;
                 font-size: 16px;

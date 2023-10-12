@@ -6,6 +6,11 @@
     background: rgba(4, 162, 9, 0.625);
     color: white;
 
+    @media screen and (max-width: 678px) {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .links {
         display: flex;
         gap: 17px;

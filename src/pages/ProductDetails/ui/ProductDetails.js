@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { firestore } from "../../../shared/providers/firebase";
 import { collection, getDocs,addDoc } from "@firebase/firestore";
 import Calendar from "react-calendar";
-import { Button } from "../../../shared/Button";
+import { Button } from "../../../shared/ui/Button";
 
 const ProductDetails = () => {
   const { id } = useParams();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { SearchInput } from "../../../shared/SearchInput";
-import { Button } from "../../../shared/Button";
+import { SearchInput } from "../../../shared/ui/SearchInput";
+import { Button } from "../../../shared/ui/Button";
 import { firestore } from "../../../shared/providers/firebase";
 import { collection, getDocs } from "@firebase/firestore";
 import "./Header.scss";

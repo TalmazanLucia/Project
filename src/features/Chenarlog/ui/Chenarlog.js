@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Chenarlog.scss";
 import { AvatarIcon } from "../../../shared/assets";
-import SearchInput from "../../../shared/SearchInput/ui/SearchInput";
-import { Button } from "../../../shared/Button";
+import SearchInput from "../../../shared/ui/SearchInput/ui/SearchInput";
+import { Button } from "../../../shared/ui/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../shared/providers/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Chenarlog = () => {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ const Chenarlog = () => {
           onChange={handlePassword}
           type={"password"}
         />
+        <Link to="/signup" style={{ color: "black", textDecoration: "none", cursor: "pointer" }}>Register</Link>
 
         <Button text={"Login"} onClick={signInUser} />
       </div>

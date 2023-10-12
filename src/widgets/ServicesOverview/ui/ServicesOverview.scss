@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: space-evenly;
 
+    @media screen and (max-width: 678px) {
+        height: calc(100% - 66vh - 53px);
+    }
+
     .nav-arrow {
         background-color: rgba(4, 162, 9, 0.625);
         padding: 4px;
@@ -31,13 +35,13 @@
         &:nth-child(2),
         &:nth-child(5) {
             position: relative;
-            bottom: 4vh
+            bottom: 4vh;
         }
-        
+
         &:nth-child(3),
         &:nth-child(4) {
             position: relative;
-            bottom: 10vh
+            bottom: 10vh;
         }
     }
 }

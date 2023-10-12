@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Button.scss'
 
-const Button = ({text, children, isLink, pathName, onClick}) => {
+const Button = ({ text, children, isLink, pathName, onClick }) => {
 
     if (!isLink) {
         return (
@@ -11,14 +11,14 @@ const Button = ({text, children, isLink, pathName, onClick}) => {
                 {children}
             </button>
         )
-     } else {
+    } else {
         return (
-            <Link to={pathName} className='button-wrapper'>
+            <Link to={pathName} className='button-wrapper' style={{ textDecoration: "none", color: "#000" }}>
                 <p>{text}</p>
                 {children}
-            </Link>  
+            </Link>
         )
-     }
+    }
 }
 
 export default Button;
